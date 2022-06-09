@@ -22,4 +22,9 @@
         android:name="fr.android.myboxer.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_credit"
+        android:name="fr.android.myboxer.ui.credit.CreditFragment"
+        android:label="@string/title_credit"
+        tools:layout="@layout/fragment_credit" />
 </navigation>
