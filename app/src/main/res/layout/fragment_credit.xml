@@ -14,6 +14,7 @@
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cyril_gane"
         tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -25,5 +26,6 @@
         android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/francis_ngannou"
         tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>
