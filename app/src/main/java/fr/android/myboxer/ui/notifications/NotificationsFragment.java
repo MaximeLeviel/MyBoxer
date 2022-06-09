@@ -25,8 +25,6 @@ public class NotificationsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        NotificationsViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
 
         view = inflater.inflate(R.layout.fragment_notifications, container, false);
         EditText nom1 = view.findViewById(R.id.nom1);
