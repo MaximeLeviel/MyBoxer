@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Calendar;
 
+import fr.android.myboxer.Database;
 import fr.android.myboxer.Match;
 import fr.android.myboxer.Opposant;
 import fr.android.myboxer.R;
@@ -49,6 +50,10 @@ public class NotificationsFragment extends Fragment {
             Calendar date = Calendar.getInstance();
             date.set(Integer.parseInt(annee.getText().toString()), Integer.parseInt(mois.getText().toString()) - 1, Integer.parseInt(jour.getText().toString()));
             match = new Match(opp1, opp2, date, gagne.isChecked());
+
+            final Database database = new Database();
+            database.save(match);
+
         });
         return view;
     }
