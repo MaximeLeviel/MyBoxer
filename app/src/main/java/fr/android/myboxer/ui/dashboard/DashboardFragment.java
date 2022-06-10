@@ -29,7 +29,7 @@ public class DashboardFragment extends Fragment {
         matchs.add(new Match(new Opposant("John", 20, 70), new Opposant("Jane", 20, 70), Calendar.getInstance(), true));
         matchs.add(new Match(new Opposant("John2", 20, 70), new Opposant("Jane", 20, 70), Calendar.getInstance(), false));
 
-        MatchAdapter matchAdapter = new MatchAdapter(getContext(), R.layout.list_item, matchs);
+        MatchAdapter matchAdapter = new MatchAdapter(this.getContext(), matchs);
         ListView listView = view.findViewById(R.id.list);
         listView.setAdapter(matchAdapter);
 

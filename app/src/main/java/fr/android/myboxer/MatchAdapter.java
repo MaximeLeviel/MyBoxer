@@ -5,20 +5,37 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Calendar;
 import java.util.List;
 
-public class MatchAdapter extends ArrayAdapter<Match> {
+public class MatchAdapter extends BaseAdapter {
+    private LayoutInflater layoutInflater;
     private final Context context;
     private List<Match> matchs;
 
-    public MatchAdapter(Context context, int resource, List<Match> matchs) {
-        super(context, resource);
-        this.context = context;
-        this.matchs = matchs;
+    public MatchAdapter(Context aContext,  List<Match> listData) {
+        this.context = aContext;
+        this.matchs = listData;
+        layoutInflater = LayoutInflater.from(aContext);
+    }
+
+    @Override
+    public int getCount() {
+        return matchs.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return matchs.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
     }
 
     @Override
