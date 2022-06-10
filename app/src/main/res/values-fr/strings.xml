@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyBoxer</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Matchs</string>
+    <string name="title_notifications">Nouveau match</string>
+    <string name="title_credit">credit</string>
+    <string name="nom_de_l_oposant_1">Nom de l\'oposant 1</string>
+    <string name="age">age</string>
+    <string name="poids">poids</string>
+    <string name="nom_de_l_oposant_2">Nom de l\'oposant 2</string>
+    <string name="jour">jour</string>
+    <string name="mois">mois</string>
+    <string name="annee">année</string>
+    <string name="aujourd_hui">Aujourd\'hui</string>
+    <string name="checkbox">Gagné</string>
+    <string name="sauvegarder">Sauvegarder</string>
+    <string name="gagne">Gagné</string>
+    <string name="perdu">Perdu</string>
+    <string name="list_item_title">%1$s (%2$d) %3$d kg</string>
+    <string name="list_item_date">%1$s (%2$d) %3$d kg</string>
+</resources>

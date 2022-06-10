@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:ems="10"
-            android:hint="Nom de l'oposant 1"
+            android:hint="@string/nom_de_l_oposant_1"
             android:inputType="textPersonName"
             android:layout_weight="1" />
 
@@ -37,7 +37,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="age"
+                android:hint="@string/age"
                 android:inputType="number"
                 android:layout_weight="1" />
 
@@ -46,7 +46,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="poids"
+                android:hint="@string/poids"
                 android:inputType="number"
                 android:layout_weight="1" />
         </LinearLayout>
@@ -64,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:ems="10"
-            android:hint="Nom de l'oposant 2"
+            android:hint="@string/nom_de_l_oposant_2"
             android:inputType="textPersonName"
             android:layout_weight="1"/>
 
@@ -80,7 +80,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="age"
+                android:hint="@string/age"
                 android:inputType="number"
                 android:layout_weight="1" />
 
@@ -89,7 +89,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="poids"
+                android:hint="@string/poids"
                 android:inputType="number"
                 android:layout_weight="1" />
         </LinearLayout>
@@ -109,7 +109,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="number"
-            android:hint="jour" />
+            android:hint="@string/jour" />
 
         <EditText
             android:id="@+id/mois"
@@ -118,7 +118,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="number"
-            android:hint="mois" />
+            android:hint="@string/mois" />
 
         <EditText
             android:id="@+id/annee"
@@ -127,14 +127,14 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="number"
-            android:hint="année" />
+            android:hint="@string/annee" />
 
         <Button
             android:id="@+id/today_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Aujourd'hui" />
+            android:text="@string/aujourd_hui" />
     </LinearLayout>
 
     <CheckBox
@@ -142,12 +142,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="CheckBox" />
+        android:text="@string/checkbox" />
 
     <Button
         android:id="@+id/save_button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="Sauvegarder" />
+        android:text="@string/sauvegarder" />
 </LinearLayout>

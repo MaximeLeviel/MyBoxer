@@ -44,21 +44,22 @@ public class MatchAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.list_item, parent, false);
         }
+        final Match match = matchs.get(position);
 
         TextView opposant1 = (TextView) convertView.findViewById(R.id.opposant1);
-        opposant1.setText(matchs.get(position).getOpposant1().getNom() + " (" + matchs.get(position).getOpposant1().getAge() + ")" + " " + matchs.get(position).getOpposant1().getPoids() + "kg");
+        opposant1.setText(context.getResources().getString(R.string.list_item_title, match.getOpposant1().getNom(), match.getOpposant1().getAge(), match.getOpposant1().getPoids()));
 
         TextView opposant2 = (TextView) convertView.findViewById(R.id.opposant2);
-        opposant2.setText(matchs.get(position).getOpposant2().getNom() + " (" + matchs.get(position).getOpposant2().getAge() + ")" + " " + matchs.get(position).getOpposant2().getPoids() + "kg");
+        opposant2.setText(context.getResources().getString(R.string.list_item_title, match.getOpposant2().getNom(), match.getOpposant2().getAge(), match.getOpposant2().getPoids()));
 
         TextView date = (TextView) convertView.findViewById(R.id.date);
-        date.setText(matchs.get(position).getDate().get(Calendar.DAY_OF_MONTH) + "/" + (matchs.get(position).getDate().get(Calendar.MONTH) + 1) + "/" + matchs.get(position).getDate().get(Calendar.YEAR));
+        date.setText(context.getResources().getString(R.string.list_item_date, match.getDate().get(Calendar.DAY_OF_MONTH), match.getDate().get(Calendar.MONTH), match.getDate().get(Calendar.YEAR)));
 
         TextView gagne = (TextView) convertView.findViewById(R.id.gagne);
         if(matchs.get(position).isGagne()) {
-            gagne.setText("Gagné");
+            gagne.setText(context.getResources().getString(R.string.gagne));
         } else {
-            gagne.setText("Perdu");
+            gagne.setText(context.getResources().getString(R.string.perdu));
         }
 
         return convertView;

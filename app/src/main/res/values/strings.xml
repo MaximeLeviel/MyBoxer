@@ -1,7 +1,21 @@
 <resources>
     <string name="app_name">MyBoxer</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dashboard">Fights</string>
+    <string name="title_notifications">New fight</string>
     <string name="title_credit">credit</string>
+    <string name="nom_de_l_oposant_1">Name of opponent 1</string>
+    <string name="age">age</string>
+    <string name="poids">weight</string>
+    <string name="nom_de_l_oposant_2">Name of opponent 2</string>
+    <string name="jour">day</string>
+    <string name="mois">month</string>
+    <string name="annee">year</string>
+    <string name="aujourd_hui">Today</string>
+    <string name="checkbox">Won</string>
+    <string name="sauvegarder">Save</string>
+    <string name="gagne">Won</string>
+    <string name="perdu">Lost</string>
+    <string name="list_item_title">%1$s (%2$d) %3$d kg</string>
+    <string name="list_item_date">%1$d/%2$d/%3$d</string>
 </resources>
