@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import fr.android.myboxer.Database;
 import fr.android.myboxer.Match;
 import fr.android.myboxer.MatchAdapter;
 import fr.android.myboxer.Opposant;
@@ -25,9 +26,8 @@ public class DashboardFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        List<Match> matchs = new ArrayList<Match>();
-        matchs.add(new Match(new Opposant("John", 20, 70), new Opposant("Jane", 20, 70), Calendar.getInstance(), true));
-        matchs.add(new Match(new Opposant("John2", 20, 70), new Opposant("Jane", 20, 70), Calendar.getInstance(), false));
+        Database database = new Database();
+        List<Match> matchs = database.getAllMatchs();
 
         MatchAdapter matchAdapter = new MatchAdapter(this.getContext(), matchs);
         ListView listView = view.findViewById(R.id.list);

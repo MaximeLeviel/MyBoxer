@@ -1,6 +1,8 @@
 package fr.android.myboxer;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Database {
 
@@ -63,5 +65,37 @@ public class Database {
             }
         });
         thread.start();
+    }
+
+    public ArrayList<Match> getAllMatchs(){
+        ArrayList<Match> matchs = new ArrayList<>();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    String sql = "SELECT * FROM fight";
+                    java.sql.PreparedStatement statement = connection.prepareStatement(sql);
+                    java.sql.ResultSet resultSet = statement.executeQuery();
+                    while (resultSet.next()) {
+                        Opposant opposant1 = new Opposant(resultSet.getString("nom1"), resultSet.getInt("age1"), resultSet.getInt("poids1"));
+                        Opposant opposant2 = new Opposant(resultSet.getString("nom2"), resultSet.getInt("age2"), resultSet.getInt("poids2"));
+                        Calendar date = Calendar.getInstance();
+                        date.setTime(resultSet.getDate("date"));
+                        boolean gagne = resultSet.getBoolean("gagne");
+                        matchs.add(new Match(opposant1, opposant2, date, gagne));
+                        }
+                    statement.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+        try {
+            thread.join();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return matchs;
     }
 }
