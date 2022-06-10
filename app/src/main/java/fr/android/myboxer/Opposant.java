@@ -10,4 +10,16 @@ public class Opposant {
         this.age = age;
         this.poids = poids;
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getPoids() {
+        return poids;
+    }
 }

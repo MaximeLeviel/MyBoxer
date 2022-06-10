@@ -4,34 +4,41 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
-import fr.android.myboxer.databinding.FragmentDashboardBinding;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import fr.android.myboxer.Match;
+import fr.android.myboxer.MatchAdapter;
+import fr.android.myboxer.Opposant;
+import fr.android.myboxer.R;
 
 public class DashboardFragment extends Fragment {
-
-    private FragmentDashboardBinding binding;
+    View view;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        List<Match> matchs = new ArrayList<Match>();
+        matchs.add(new Match(new Opposant("John", 20, 70), new Opposant("Jane", 20, 70), Calendar.getInstance(), true));
+        matchs.add(new Match(new Opposant("John2", 20, 70), new Opposant("Jane", 20, 70), Calendar.getInstance(), false));
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+        MatchAdapter matchAdapter = new MatchAdapter(this.getContext(), matchs);
+        ListView listView = view.findViewById(R.id.list);
+        listView.setAdapter(matchAdapter);
+
+        return view;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        binding = null;
+        view = null;
     }
 }

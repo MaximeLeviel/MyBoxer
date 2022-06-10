@@ -5,19 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import java.util.Calendar;
 
 import fr.android.myboxer.Match;
 import fr.android.myboxer.Opposant;
 import fr.android.myboxer.R;
-import fr.android.myboxer.databinding.FragmentNotificationsBinding;
 
 public class NotificationsFragment extends Fragment {
     private Match match;
@@ -43,13 +41,14 @@ public class NotificationsFragment extends Fragment {
             mois.setText(String.valueOf(today.get(Calendar.MONTH) + 1));
             annee.setText(String.valueOf(today.get(Calendar.YEAR)));
         });
+        CheckBox gagne = view.findViewById(R.id.gagne);
         Button save = view.findViewById(R.id.save_button);
         save.setOnClickListener(v -> {
             Opposant opp1 = new Opposant(nom1.getText().toString(), Integer.parseInt(age1.getText().toString()), Integer.parseInt(poids1.getText().toString()));
             Opposant opp2 = new Opposant(nom2.getText().toString(), Integer.parseInt(age2.getText().toString()), Integer.parseInt(poids2.getText().toString()));
             Calendar date = Calendar.getInstance();
             date.set(Integer.parseInt(annee.getText().toString()), Integer.parseInt(mois.getText().toString()) - 1, Integer.parseInt(jour.getText().toString()));
-            match = new Match(opp1, opp2, date);
+            match = new Match(opp1, opp2, date, gagne.isChecked());
         });
         return view;
     }
