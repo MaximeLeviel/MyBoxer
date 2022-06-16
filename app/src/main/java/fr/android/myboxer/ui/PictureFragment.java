@@ -20,7 +20,7 @@ import androidx.fragment.app.Fragment;
 import fr.android.myboxer.R;
 
 public class PictureFragment extends Fragment {
-    View view;
+    private View view;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

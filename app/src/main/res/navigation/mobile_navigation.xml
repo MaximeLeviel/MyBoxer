@@ -25,6 +25,6 @@
     <fragment
         android:id="@+id/navigation_credit"
         android:name="fr.android.myboxer.ui.PictureFragment"
-        android:label="@string/title_credit"
+        android:label="@string/title_camera"
         tools:layout="@layout/fragment_picture" />
 </navigation>

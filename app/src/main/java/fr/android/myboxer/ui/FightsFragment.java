@@ -14,7 +14,7 @@ import fr.android.myboxer.MatchAdapter;
 import fr.android.myboxer.R;
 
 public class FightsFragment extends Fragment {
-    View view;
+    private View view;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
