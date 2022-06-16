@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="fr.android.myboxer.ui.notifications.NotificationsFragment"
+        android:name="fr.android.myboxer.ui.fight.NewFightFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_new_fight" />
     <fragment
         android:id="@+id/navigation_credit"
         android:name="fr.android.myboxer.ui.picture.PictureFragment"

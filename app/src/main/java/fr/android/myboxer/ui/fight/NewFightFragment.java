@@ -1,9 +1,7 @@
-package fr.android.myboxer.ui.notifications;
+package fr.android.myboxer.ui.fight;
 
-import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +13,6 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.location.FusedLocationProviderClient;
-
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
@@ -27,14 +23,14 @@ import fr.android.myboxer.Match;
 import fr.android.myboxer.Opposant;
 import fr.android.myboxer.R;
 
-public class NotificationsFragment extends Fragment {
+public class NewFightFragment extends Fragment {
     private Match match;
     private View view;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_notifications, container, false);
+        view = inflater.inflate(R.layout.fragment_new_fight, container, false);
         EditText nom1 = view.findViewById(R.id.nom1);
         EditText nom2 = view.findViewById(R.id.nom2);
         EditText age1 = view.findViewById(R.id.age1);

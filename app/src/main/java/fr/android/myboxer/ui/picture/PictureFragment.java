@@ -1,7 +1,6 @@
 package fr.android.myboxer.ui.picture;
 
 import static android.app.Activity.RESULT_OK;
-
 import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -39,7 +38,7 @@ public class PictureFragment extends Fragment {
                 try {
                     startActivityForResult(takePictureIntent, 123);
                 } catch (ActivityNotFoundException e) {
-                    // display error state to the user
+                    e.printStackTrace();
                 }
             }
         });
