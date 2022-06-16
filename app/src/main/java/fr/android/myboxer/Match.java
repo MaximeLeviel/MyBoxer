@@ -57,4 +57,13 @@ public class Match {
     public void setLng(double lng) {
         this.lng = lng;
     }
+    public String getMatchDescription(){
+        String gagnant;
+        if (gagne){
+            gagnant = this.opposant1.getNom();
+        }
+        else
+            gagnant = this.opposant2.getNom();
+        return this.date + "\n" + this.opposant1.getNom() + " vs " + this.opposant2.getNom() + "\n gagnant : " + gagnant;
+    }
 }
