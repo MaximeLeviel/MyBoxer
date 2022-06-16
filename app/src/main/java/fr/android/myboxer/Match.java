@@ -7,12 +7,23 @@ public class Match {
     private Opposant opposant2;
     private Calendar date;
     private boolean gagne;
+    private double lat;
+    private double lng;
 
     public Match(Opposant opposant1, Opposant opposant2, Calendar date, boolean gagne) {
         this.opposant1 = opposant1;
         this.opposant2 = opposant2;
         this.date = date;
         this.gagne = gagne;
+    }
+
+    public Match(Opposant opposant1, Opposant opposant2, Calendar date, boolean gagne, double lat, double lng) {
+        this.opposant1 = opposant1;
+        this.opposant2 = opposant2;
+        this.date = date;
+        this.gagne = gagne;
+        this.lat = lat;
+        this.lng = lng;
     }
 
     public Opposant getOpposant1() {
@@ -29,5 +40,21 @@ public class Match {
 
     public boolean isGagne() {
         return gagne;
+    }
+
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLng() {
+        return lng;
+    }
+
+    public void setLng(double lng) {
+        this.lng = lng;
     }
 }
