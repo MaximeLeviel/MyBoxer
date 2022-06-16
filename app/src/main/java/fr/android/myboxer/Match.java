@@ -64,6 +64,6 @@ public class Match {
         }
         else
             gagnant = this.opposant2.getNom();
-        return this.date + "\n" + this.opposant1.getNom() + " vs " + this.opposant2.getNom() + "\n gagnant : " + gagnant;
+        return this.opposant1.getNom() + " vs " + this.opposant2.getNom();
     }
 }
