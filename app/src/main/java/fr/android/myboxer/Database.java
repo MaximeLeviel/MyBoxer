@@ -47,7 +47,7 @@ public class Database {
             @Override
             public void run() {
                 try {
-                    String sql = "INSERT INTO fight (nom1, age1, poids1, nom2, age2, poids2, date, gagne) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                    String sql = "INSERT INTO fight (nom1, age1, poids1, nom2, age2, poids2, date, gagne, lat, lng) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     java.sql.PreparedStatement statement = connection.prepareStatement(sql);
                     statement.setString(1, match.getOpposant1().getNom());
                     statement.setInt(2, match.getOpposant1().getAge());
@@ -57,6 +57,8 @@ public class Database {
                     statement.setInt(6, match.getOpposant2().getPoids());
                     statement.setDate(7, new java.sql.Date(match.getDate().getTimeInMillis()));
                     statement.setBoolean(8, match.isGagne());
+                    statement.setDouble(9, match.getLat());
+                    statement.setDouble(10, match.getLng());
                     statement.executeUpdate();
                     statement.close();
                 } catch (Exception e) {
@@ -82,7 +84,10 @@ public class Database {
                         Calendar date = Calendar.getInstance();
                         date.setTime(resultSet.getDate("date"));
                         boolean gagne = resultSet.getBoolean("gagne");
-                        matchs.add(new Match(opposant1, opposant2, date, gagne));
+                        double lat = resultSet.getDouble("lat");
+                        double lng = resultSet.getDouble("lng");
+                        Match match = new Match(opposant1, opposant2, date, gagne, lat, lng);
+                        matchs.add(match);
                         }
                     statement.close();
                 } catch (Exception e) {

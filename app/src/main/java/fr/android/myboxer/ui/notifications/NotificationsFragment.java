@@ -1,5 +1,9 @@
 package fr.android.myboxer.ui.notifications;
 
+import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +15,12 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+
+import java.io.IOException;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
 
 import fr.android.myboxer.Database;
 import fr.android.myboxer.Match;
@@ -35,6 +44,7 @@ public class NotificationsFragment extends Fragment {
         EditText jour = view.findViewById(R.id.jour);
         EditText mois = view.findViewById(R.id.mois);
         EditText annee = view.findViewById(R.id.annee);
+        EditText adresse = view.findViewById(R.id.adresse);
         Button todayButton = view.findViewById(R.id.today_button);
         final Calendar today = Calendar.getInstance();
         todayButton.setOnClickListener(v -> {
@@ -50,6 +60,17 @@ public class NotificationsFragment extends Fragment {
             Calendar date = Calendar.getInstance();
             date.set(Integer.parseInt(annee.getText().toString()), Integer.parseInt(mois.getText().toString()) - 1, Integer.parseInt(jour.getText().toString()));
             match = new Match(opp1, opp2, date, gagne.isChecked());
+
+            Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
+            try {
+                List<Address> addresses = geocoder.getFromLocationName(adresse.getText().toString(), 1);
+                if(addresses.size() > 0) {
+                    match.setLat(addresses.get(0).getLatitude());
+                    match.setLng(addresses.get(0).getLongitude());
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             final Database database = new Database();
             database.save(match);
