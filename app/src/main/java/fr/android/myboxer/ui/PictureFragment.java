@@ -1,4 +1,4 @@
-package fr.android.myboxer.ui.picture;
+package fr.android.myboxer.ui;
 
 import static android.app.Activity.RESULT_OK;
 import android.Manifest;

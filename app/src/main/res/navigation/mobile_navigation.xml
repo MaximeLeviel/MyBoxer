@@ -7,24 +7,24 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="fr.android.myboxer.ui.map.MapFragment"
+        android:name="fr.android.myboxer.ui.MapFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_map" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="fr.android.myboxer.ui.fights.FightsFragment"
+        android:name="fr.android.myboxer.ui.FightsFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_fights" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="fr.android.myboxer.ui.newFight.NewFightFragment"
+        android:name="fr.android.myboxer.ui.NewFightFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_new_fight" />
     <fragment
         android:id="@+id/navigation_credit"
-        android:name="fr.android.myboxer.ui.picture.PictureFragment"
+        android:name="fr.android.myboxer.ui.PictureFragment"
         android:label="@string/title_credit"
         tools:layout="@layout/fragment_picture" />
 </navigation>

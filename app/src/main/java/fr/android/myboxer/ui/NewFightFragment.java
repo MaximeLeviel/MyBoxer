@@ -1,4 +1,4 @@
-package fr.android.myboxer.ui.newFight;
+package fr.android.myboxer.ui;
 
 import android.location.Address;
 import android.location.Geocoder;

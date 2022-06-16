@@ -1,4 +1,4 @@
-package fr.android.myboxer.ui.map;
+package fr.android.myboxer.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
