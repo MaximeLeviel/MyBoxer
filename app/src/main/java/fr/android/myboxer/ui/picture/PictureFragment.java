@@ -1,4 +1,4 @@
-package fr.android.myboxer.ui.credit;
+package fr.android.myboxer.ui.picture;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -7,7 +7,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
@@ -15,31 +14,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
-
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelStoreOwner;
-
-import java.io.File;
-
 import fr.android.myboxer.R;
-import fr.android.myboxer.databinding.FragmentCreditBinding;
-import fr.android.myboxer.ui.credit.CreditViewModel;
 
-public class CreditFragment extends Fragment {
+public class PictureFragment extends Fragment {
     View view;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_credit, container, false);
+        view = inflater.inflate(R.layout.fragment_picture, container, false);
 
         Button pictureButton = view.findViewById(R.id.picture_button);
         pictureButton.setOnClickListener(new View.OnClickListener() {

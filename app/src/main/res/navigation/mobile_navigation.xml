@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/navigation_credit"
-        android:name="fr.android.myboxer.ui.credit.CreditFragment"
+        android:name="fr.android.myboxer.ui.picture.PictureFragment"
         android:label="@string/title_credit"
-        tools:layout="@layout/fragment_credit" />
+        tools:layout="@layout/fragment_picture" />
 </navigation>
