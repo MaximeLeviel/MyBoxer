@@ -21,7 +21,8 @@ import fr.android.myboxer.Database;
 import fr.android.myboxer.Match;
 import fr.android.myboxer.R;
 
-public class MapFragment extends Fragment {private GoogleMap mMap;
+public class MapFragment extends Fragment {
+    private GoogleMap mMap;
     private Database dBase = new Database();
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 

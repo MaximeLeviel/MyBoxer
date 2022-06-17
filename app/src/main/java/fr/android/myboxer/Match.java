@@ -3,10 +3,10 @@ package fr.android.myboxer;
 import java.util.Calendar;
 
 public class Match {
-    private Opposant opposant1;
-    private Opposant opposant2;
-    private Calendar date;
-    private boolean gagne;
+    private final Opposant opposant1;
+    private final Opposant opposant2;
+    private final Calendar date;
+    private final boolean gagne;
     private double lat;
     private double lng;
 
@@ -57,13 +57,8 @@ public class Match {
     public void setLng(double lng) {
         this.lng = lng;
     }
+
     public String getMatchDescription(){
-        String gagnant;
-        if (gagne){
-            gagnant = this.opposant1.getNom();
-        }
-        else
-            gagnant = this.opposant2.getNom();
         return this.opposant1.getNom() + " vs " + this.opposant2.getNom();
     }
 }

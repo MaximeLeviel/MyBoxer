@@ -19,7 +19,7 @@ import java.util.Locale;
 public class MatchAdapter extends BaseAdapter {
     private LayoutInflater layoutInflater;
     private final Context context;
-    private List<Match> matchs;
+    private final List<Match> matchs;
 
     public MatchAdapter(Context aContext,  List<Match> listData) {
         this.context = aContext;
@@ -50,23 +50,23 @@ public class MatchAdapter extends BaseAdapter {
         }
         final Match match = matchs.get(position);
 
-        TextView opposant1 = (TextView) convertView.findViewById(R.id.opposant1);
+        TextView opposant1 = convertView.findViewById(R.id.opposant1);
         opposant1.setText(context.getResources().getString(R.string.list_item_title, match.getOpposant1().getNom(), match.getOpposant1().getAge(), match.getOpposant1().getPoids()));
 
-        TextView opposant2 = (TextView) convertView.findViewById(R.id.opposant2);
+        TextView opposant2 = convertView.findViewById(R.id.opposant2);
         opposant2.setText(context.getResources().getString(R.string.list_item_title, match.getOpposant2().getNom(), match.getOpposant2().getAge(), match.getOpposant2().getPoids()));
 
-        TextView date = (TextView) convertView.findViewById(R.id.date);
+        TextView date = convertView.findViewById(R.id.date);
         date.setText(context.getResources().getString(R.string.list_item_date, match.getDate().get(Calendar.DAY_OF_MONTH), match.getDate().get(Calendar.MONTH), match.getDate().get(Calendar.YEAR)));
 
-        TextView gagne = (TextView) convertView.findViewById(R.id.gagne);
+        TextView gagne = convertView.findViewById(R.id.gagne);
         if(matchs.get(position).isGagne()) {
             gagne.setText(context.getResources().getString(R.string.gagne));
         } else {
             gagne.setText(context.getResources().getString(R.string.perdu));
         }
 
-        TextView address = (TextView) convertView.findViewById(R.id.item_address);
+        TextView address = convertView.findViewById(R.id.item_address);
 
         Geocoder geocoder = new Geocoder(context, Locale.getDefault());
 
