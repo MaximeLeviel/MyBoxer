@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 
 import fr.android.myboxer.Database;
-import fr.android.myboxer.Match;
+import fr.android.myboxer.Fight;
 import fr.android.myboxer.R;
 
 public class MapFragment extends Fragment {
@@ -40,10 +40,10 @@ public class MapFragment extends Fragment {
 
             mMap = googleMap;
             LatLng MyPos;
-            ArrayList<Match> matchs = dBase.getAllMatchs();
-            for (Match m: matchs) {
+            ArrayList<Fight> fights = dBase.getAllFights();
+            for (Fight m: fights) {
                 MyPos = new LatLng(m.getLat(),m.getLng());
-                mMap.addMarker(new MarkerOptions().position(MyPos).title(m.getMatchDescription()));
+                mMap.addMarker(new MarkerOptions().position(MyPos).title(m.getFightDescription()));
             }
         }
     };

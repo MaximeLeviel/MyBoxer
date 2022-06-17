@@ -9,8 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import java.util.List;
 import fr.android.myboxer.Database;
-import fr.android.myboxer.Match;
-import fr.android.myboxer.MatchAdapter;
+import fr.android.myboxer.Fight;
+import fr.android.myboxer.FightAdapter;
 import fr.android.myboxer.R;
 
 public class FightsFragment extends Fragment {
@@ -21,11 +21,11 @@ public class FightsFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_fights, container, false);
 
         Database database = new Database();
-        List<Match> matchs = database.getAllMatchs();
+        List<Fight> fights = database.getAllFights();
 
-        MatchAdapter matchAdapter = new MatchAdapter(this.getContext(), matchs);
+        FightAdapter fightAdapter = new FightAdapter(this.getContext(), fights);
         ListView listView = view.findViewById(R.id.list);
-        listView.setAdapter(matchAdapter);
+        listView.setAdapter(fightAdapter);
 
         return view;
     }

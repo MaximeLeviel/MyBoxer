@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">MyBoxer</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Matchs</string>
-    <string name="title_notifications">Nouveau match</string>
+    <string name="title_dashboard">Combats</string>
+    <string name="title_notifications">Nouveau combat</string>
     <string name="title_camera">Caméra</string>
     <string name="nom_de_l_oposant_1">Nom de l\'oposant 1</string>
     <string name="age">age</string>

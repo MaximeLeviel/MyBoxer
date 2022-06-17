@@ -43,23 +43,23 @@ public class Database {
         }
     }
 
-    public void save(Match match) {
+    public void save(Fight fight) {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     String sql = "INSERT INTO fight (nom1, age1, poids1, nom2, age2, poids2, date, gagne, lat, lng) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     java.sql.PreparedStatement statement = connection.prepareStatement(sql);
-                    statement.setString(1, match.getOpposant1().getNom());
-                    statement.setInt(2, match.getOpposant1().getAge());
-                    statement.setInt(3, match.getOpposant1().getPoids());
-                    statement.setString(4, match.getOpposant2().getNom());
-                    statement.setInt(5, match.getOpposant2().getAge());
-                    statement.setInt(6, match.getOpposant2().getPoids());
-                    statement.setDate(7, new java.sql.Date(match.getDate().getTimeInMillis()));
-                    statement.setBoolean(8, match.isGagne());
-                    statement.setDouble(9, match.getLat());
-                    statement.setDouble(10, match.getLng());
+                    statement.setString(1, fight.getOpposant1().getNom());
+                    statement.setInt(2, fight.getOpposant1().getAge());
+                    statement.setInt(3, fight.getOpposant1().getPoids());
+                    statement.setString(4, fight.getOpposant2().getNom());
+                    statement.setInt(5, fight.getOpposant2().getAge());
+                    statement.setInt(6, fight.getOpposant2().getPoids());
+                    statement.setDate(7, new java.sql.Date(fight.getDate().getTimeInMillis()));
+                    statement.setBoolean(8, fight.isGagne());
+                    statement.setDouble(9, fight.getLat());
+                    statement.setDouble(10, fight.getLng());
                     statement.executeUpdate();
                     statement.close();
                 } catch (Exception e) {
@@ -70,8 +70,8 @@ public class Database {
         thread.start();
     }
 
-    public ArrayList<Match> getAllMatchs(){
-        ArrayList<Match> matchs = new ArrayList<>();
+    public ArrayList<Fight> getAllFights(){
+        ArrayList<Fight> fights = new ArrayList<>();
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -87,8 +87,8 @@ public class Database {
                         boolean gagne = resultSet.getBoolean("gagne");
                         double lat = resultSet.getDouble("lat");
                         double lng = resultSet.getDouble("lng");
-                        Match match = new Match(opposant1, opposant2, date, gagne, lat, lng);
-                        matchs.add(match);
+                        Fight fight = new Fight(opposant1, opposant2, date, gagne, lat, lng);
+                        fights.add(fight);
                         }
                     statement.close();
                 } catch (Exception e) {
@@ -102,6 +102,6 @@ public class Database {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return matchs;
+        return fights;
     }
 }

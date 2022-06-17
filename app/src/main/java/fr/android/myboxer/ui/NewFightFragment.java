@@ -20,12 +20,12 @@ import java.util.List;
 import java.util.Locale;
 
 import fr.android.myboxer.Database;
-import fr.android.myboxer.Match;
+import fr.android.myboxer.Fight;
 import fr.android.myboxer.Opposant;
 import fr.android.myboxer.R;
 
 public class NewFightFragment extends Fragment {
-    private Match match;
+    private Fight fight;
     private View view;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -56,21 +56,21 @@ public class NewFightFragment extends Fragment {
             Opposant opp2 = new Opposant(nom2.getText().toString(), Integer.parseInt(age2.getText().toString()), Integer.parseInt(poids2.getText().toString()));
             Calendar date = Calendar.getInstance();
             date.set(Integer.parseInt(annee.getText().toString()), Integer.parseInt(mois.getText().toString()) - 1, Integer.parseInt(jour.getText().toString()));
-            match = new Match(opp1, opp2, date, gagne.isChecked());
+            fight = new Fight(opp1, opp2, date, gagne.isChecked());
 
             Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
             try {
                 List<Address> addresses = geocoder.getFromLocationName(adresse.getText().toString(), 1);
                 if(addresses.size() > 0) {
-                    match.setLat(addresses.get(0).getLatitude());
-                    match.setLng(addresses.get(0).getLongitude());
+                    fight.setLat(addresses.get(0).getLatitude());
+                    fight.setLng(addresses.get(0).getLongitude());
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
             final Database database = new Database();
-            database.save(match);
+            database.save(fight);
             Toast toast = Toast.makeText(getContext(), getContext().getResources().getString(R.string.enregistre), Toast.LENGTH_SHORT);
             toast.show();
             nom1.setText("");
