@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -70,7 +71,19 @@ public class NewFightFragment extends Fragment {
 
             final Database database = new Database();
             database.save(match);
-
+            Toast toast = Toast.makeText(getContext(), getContext().getResources().getString(R.string.enregistre), Toast.LENGTH_SHORT);
+            toast.show();
+            nom1.setText("");
+            nom2.setText("");
+            age1.setText("");
+            age2.setText("");
+            poids1.setText("");
+            poids2.setText("");
+            jour.setText("");
+            mois.setText("");
+            annee.setText("");
+            adresse.setText("");
+            gagne.setChecked(false);
         });
         return view;
     }

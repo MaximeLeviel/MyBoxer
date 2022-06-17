@@ -14,6 +14,7 @@
     <string name="aujourd_hui">Today</string>
     <string name="checkbox">Won</string>
     <string name="sauvegarder">Save</string>
+    <string name="enregistre">Fight saved</string>
     <string name="gagne">Won</string>
     <string name="perdu">Lost</string>
     <string name="list_item_title">%1$s (%2$d) %3$d kg</string>
