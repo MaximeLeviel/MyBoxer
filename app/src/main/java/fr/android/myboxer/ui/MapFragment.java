@@ -41,9 +41,9 @@ public class MapFragment extends Fragment {
             mMap = googleMap;
             LatLng MyPos;
             ArrayList<Fight> fights = dBase.getAllFights();
-            for (Fight m: fights) {
-                MyPos = new LatLng(m.getLat(),m.getLng());
-                mMap.addMarker(new MarkerOptions().position(MyPos).title(m.getFightDescription()));
+            for (Fight fight: fights) {
+                MyPos = new LatLng(fight.getLat(),fight.getLng());
+                mMap.addMarker(new MarkerOptions().position(MyPos).title(fight.getFightDescription()));
             }
         }
     };
